@@ -24,19 +24,17 @@ export default function InfoCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-4">
       {cards.map((card, index) => (
-        <motion.button
+        <motion.a
           key={card.label}
+          href={card.url}
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.9 + index * 0.1, duration: 0.6 }}
           whileHover={{ scale: 1.05, y: -5 }}
           whileTap={{ scale: 0.98 }}
           className={`relative group cursor-pointer ${card.highlight ? 'md:col-span-1' : ''}`}
-          onClick={() => {
-            if (card.url) {
-              window.open(card.url, '_blank');
-            }
-          }}
         >
           {card.highlight && (
             <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl blur-2xl opacity-50 group-hover:opacity-75 animate-pulse transition-all duration-500" />
@@ -78,7 +76,7 @@ export default function InfoCards() {
               HOT
             </div>
           )}
-        </motion.button>
+        </motion.a>
       ))}
     </div>
   );

@@ -33,7 +33,7 @@ export default function Home() {
 
       <Navigation scrolled={scrolled} />
 
-      <motion.section 
+      <motion.main 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -49,7 +49,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0f]/50 to-[#0a0a0f]" />
           <img 
             src="https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?w=1920&q=80"
-            alt="Miami skyline"
+            alt="Miami skyline at sunset - Vice City inspired scenery"
+            loading="eager"
             className="w-full h-full object-cover opacity-30 blur-sm"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent" />
@@ -79,7 +80,7 @@ export default function Home() {
         {/* Floating neon orbs */}
         <div className="absolute top-1/4 left-10 w-64 h-64 bg-pink-500 rounded-full blur-[120px] opacity-20 animate-pulse" />
         <div className="absolute bottom-1/4 right-10 w-64 h-64 bg-cyan-400 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
-      </motion.section>
+      </motion.main>
 
       <PromoSection />
       <Footer />

@@ -19,16 +19,18 @@ export default function Footer() {
           className="flex justify-center gap-6 mb-8"
         >
           {socialLinks.map((social) => (
-            <motion.button
+            <motion.a
               key={social.label}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.2, y: -3 }}
               whileTap={{ scale: 0.9 }}
               className={`cursor-pointer p-3 rounded-full bg-white/5 border border-gray-700/50 text-gray-400 transition-all duration-300 ${social.color} hover:border-current hover:shadow-lg hover:shadow-current/50`}
               aria-label={social.label}
-              onClick={() => { window.open(social.url, '_blank');}}
             >
               <social.icon size={20} />
-            </motion.button>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -49,6 +51,9 @@ export default function Footer() {
           <p className="text-gray-500 text-xs">
             This is a fan-made countdown website. Not affiliated with Rockstar Games.
           </p>
+          <a className="text-gray-500 text-xs" href="https://github.com/Buchetuche" target="_blank">
+            Build by Félix González
+          </a>
         </motion.div>
 
         {/* Decorative elements */}

@@ -43,19 +43,17 @@ export default function PromoSection() {
         {/* Promo cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {promos.map((promo, index) => (
-            <motion.div
+            <motion.a
               key={promo.title}
+              href={promo.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
               whileHover={{ y: -10 }}
               className="group cursor-pointer"
-              onClick={() => {
-                if (promo.url) {
-                  window.open(promo.url, '_blank');
-                }
-              }}
             >
               <div className="relative overflow-hidden rounded-2xl">
                 {/* Background image */}
@@ -63,6 +61,7 @@ export default function PromoSection() {
                   <img
                     src={promo.image}
                     alt={promo.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Gradient overlay */}
@@ -88,7 +87,7 @@ export default function PromoSection() {
                 {/* Neon border effect */}
                 <div className={`absolute inset-0 border-2 border-transparent group-hover:border-pink-500/50 rounded-2xl transition-all duration-500`} />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
@@ -109,14 +108,16 @@ export default function PromoSection() {
                 <p className="text-gray-300 text-lg mb-6">
                   Stay updated with the latest news and connect with millions of fans worldwide
                 </p>
-                <motion.button
+                <motion.a
+                  href="https://discord.com/invite/gta-vi"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r cursor-pointer from-pink-500 to-rose-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-pink-500/50 hover:shadow-pink-500/80 transition-all duration-300"
-                  onClick={() => { window.open('https://discord.com/invite/gta-vi', '_blank')}}
+                  className="inline-block bg-gradient-to-r cursor-pointer from-pink-500 to-rose-500 text-white font-bold px-8 py-4 rounded-full shadow-lg shadow-pink-500/50 hover:shadow-pink-500/80 transition-all duration-300"
                 >
                   Join Us
-                </motion.button>
+                </motion.a>
               </div>
             </div>
             

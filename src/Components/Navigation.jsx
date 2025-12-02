@@ -38,28 +38,19 @@ export default function Navigation({ scrolled }) {
 
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <motion.button
-                key={item}
+              <motion.a
+                key={item.name}
+                href={item.url}
+                target={item.name === "Social" ? undefined : "_blank"}
+                rel={item.name === "Social" ? undefined : "noopener noreferrer"}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="relative group text-gray-300 font-medium tracking-wide transition-colors duration-300 hover:text-white cursor-pointer"
-                 onClick={() => {
-                  if (item.url) {
-                    if(item.name === "Social") {
-                      window.scrollTo({
-                        top: document.getElementById('footer').offsetTop,
-                        behavior: 'smooth'
-                      });
-                    } else {
-                      window.open(item.url, '_blank');
-                    }
-                  }
-                }}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-cyan-400 transition-all duration-300 group-hover:w-full" />
                 <span className="absolute inset-0 blur-xl opacity-0 bg-gradient-to-r from-pink-500 to-cyan-400 transition-opacity duration-300 group-hover:opacity-30" />
-              </motion.button>
+              </motion.a>
             ))}
           </div>
 
@@ -81,13 +72,16 @@ export default function Navigation({ scrolled }) {
         >
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
-              <motion.button
-                key={item}
+              <motion.a
+                key={item.name}
+                href={item.url}
+                target={item.name === "Social" ? undefined : "_blank"}
+                rel={item.name === "Social" ? undefined : "noopener noreferrer"}
                 whileTap={{ scale: 0.95 }}
                 className="block w-full text-left text-gray-300 font-medium py-3 px-4 rounded-lg hover:bg-pink-500/10 hover:text-white transition-all duration-300"
               >
-                {item}
-              </motion.button>
+                {item.name}
+              </motion.a>
             ))}
           </div>
         </motion.div>
