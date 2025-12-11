@@ -6,7 +6,6 @@ export default function EmbedSection() {
   const [copied, setCopied] = useState(false);
   const [selectedSize, setSelectedSize] = useState({ width: "700", height: "250" });
   
-  // El código del iframe que los usuarios pueden copiar
   const embedCode = `<iframe src="https://www.timetillgta.com/embed" width="${selectedSize.width}" height="${selectedSize.height}" frameborder="0" allowtransparency="true" style="border-radius: 12px;"></iframe>`;
 
   const handleCopy = async () => {
@@ -102,7 +101,7 @@ export default function EmbedSection() {
                   <button
                     key={size.label}
                     onClick={() => setSelectedSize({ width: size.width, height: size.height })}
-                    className={`w-full flex items-center justify-between p-3 rounded-lg border transition-all duration-300 ${
+                    className={`w-full flex items-center justify-between p-3 rounded-lg border transition-all duration-300 cursor-pointer ${
                       selectedSize.width === size.width && selectedSize.height === size.height
                         ? 'bg-cyan-500/20 border-cyan-500/50 shadow-lg shadow-cyan-500/20'
                         : 'bg-white/5 border-gray-700/50 hover:bg-white/10'
@@ -133,7 +132,7 @@ export default function EmbedSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleCopy}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 cursor-pointer ${
                     copied 
                       ? 'bg-green-500/20 text-green-400 border border-green-500/50' 
                       : 'bg-pink-500/20 text-pink-400 border border-pink-500/50 hover:bg-pink-500/30'
@@ -146,7 +145,7 @@ export default function EmbedSection() {
                     </>
                   ) : (
                     <>
-                      <Copy size={18} />
+                      <Copy size={18}  />
                       Copy
                     </>
                   )}
