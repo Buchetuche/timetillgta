@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import CountdownTimer from "../Components/CountdownTimer.jsx";
+import EmbedSection from "../Components/EmbedSection.jsx";
 import Footer from "../Components/Footer.jsx";
 import InfoCards from "../Components/InfoCards.jsx";
 import Navigation from "../Components/Navigation.jsx";
@@ -82,6 +83,7 @@ export default function Home() {
         <div className="absolute bottom-1/4 right-10 w-64 h-64 bg-cyan-400 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
       </motion.main>
 
+      <EmbedSection />
       <PromoSection />
       <Footer />
     </div>

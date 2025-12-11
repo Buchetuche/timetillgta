@@ -5,14 +5,30 @@ import { useState } from "react";
 export default function Navigation({ scrolled }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleSmoothScroll = (e, sectionId) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   const navItems = [
     {
       name: "Trailer",
-      url: 'https://www.youtube.com/watch?v=VQRLujxTm3c&t=0s'
+      url: 'https://www.youtube.com/watch?v=VQRLujxTm3c&t=0s',
+      isExternal: true
+    },
+    {
+      name: "Embed",
+      url: '#embed',
+      isExternal: false
     },
     {
       name: "Social",
-      url : '#footer'
+      url : '#footer',
+      isExternal: false
     }];
 
   return (
@@ -41,8 +57,9 @@ export default function Navigation({ scrolled }) {
               <motion.a
                 key={item.name}
                 href={item.url}
-                target={item.name === "Social" ? undefined : "_blank"}
-                rel={item.name === "Social" ? undefined : "noopener noreferrer"}
+                onClick={(e) => !item.isExternal && handleSmoothScroll(e, item.url.slice(1))}
+                target={item.isExternal ? "_blank" : undefined}
+                rel={item.isExternal ? "noopener noreferrer" : undefined}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="relative group text-gray-300 font-medium tracking-wide transition-colors duration-300 hover:text-white cursor-pointer"
@@ -75,8 +92,9 @@ export default function Navigation({ scrolled }) {
               <motion.a
                 key={item.name}
                 href={item.url}
-                target={item.name === "Social" ? undefined : "_blank"}
-                rel={item.name === "Social" ? undefined : "noopener noreferrer"}
+                onClick={(e) => !item.isExternal && handleSmoothScroll(e, item.url.slice(1))}
+                target={item.isExternal ? "_blank" : undefined}
+                rel={item.isExternal ? "noopener noreferrer" : undefined}
                 whileTap={{ scale: 0.95 }}
                 className="block w-full text-left text-gray-300 font-medium py-3 px-4 rounded-lg hover:bg-pink-500/10 hover:text-white transition-all duration-300"
               >
