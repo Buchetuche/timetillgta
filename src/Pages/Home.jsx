@@ -70,7 +70,11 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-2xl md:text-3xl text-gray-300 font-light tracking-wide uppercase">
-              Time Until Launch
+              Countdown Timer to GTA 6 Release
+            </p>
+            <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
+              Track days, hours, minutes and seconds until Grand Theft Auto VI launches on November 19, 2026. 
+              Free countdown widget for streams and embeds.
             </p>
           </motion.div>
 

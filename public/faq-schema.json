@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When does GTA VI come out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grand Theft Auto VI (GTA VI) is scheduled to release on November 19, 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much time until GTA 6 release?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our countdown timer to see exactly how many days, hours, minutes, and seconds remain until GTA VI launches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I embed the GTA countdown on my stream?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We provide free embeddable widgets compatible with OBS Studio, Streamlabs, and any website. Visit our Embed section to get started."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an official Rockstar Games website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, this is a fan-made countdown website. It is not affiliated with Rockstar Games. GTA VI is a trademark of Rockstar Games."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the countdown timer free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our GTA VI countdown timer and widget are completely free to use for everyone."
+      }
+    }
+  ]
+}
